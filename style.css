@@ -1,0 +1,86 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;       /* centers the h1 and the calculator */
+  margin: 0;
+  padding: 2rem 1rem;
+  background: #f0f2f5;
+  font-family: system-ui, sans-serif;
+}
+
+#calculator {
+  display: grid;
+  gap: 12px;
+  width: 100%;
+  max-width: 320px;
+  padding: 1.25rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+#expression {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1.2rem;
+  padding: 12px;
+  text-align: right;
+}
+
+#output {
+  min-height: 2rem;
+  padding: 8px;
+  font-size: 1.2rem;
+  text-align: right;
+  overflow-x: auto;          /* long results scroll sideways */
+}
+
+#keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  font-weight: bold;
+}
+
+#keys button {
+  padding: 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: #e8eaed;
+  cursor: pointer;
+}
+
+#keys button:hover  { background: #d5d8dc; }
+#keys button:active { transform: scale(0.96); }
+
+/* attribute selectors, so no extra classes needed in the HTML */
+#keys [data-action="equals"] {
+  grid-column: span 2;
+  background: #4285f4;
+  color: #fff;
+}
+
+#keys [data-action="clear"] {
+  background: #f5c6c2;
+}
+
+/* variables + history */
+#variables input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 6px;
+  margin-bottom: 6px;
+}
+
+#var-message {
+  color: #c0392b;
+  min-height: 1.2em;
+  font-size: 0.9rem;
+}
+
+#var-list,
+#history-list {
+  padding-left: 1.2rem;
+  margin: 0;
+}
